@@ -132,7 +132,7 @@ export default {
      */
     inputBlurred () {
       var parseableDate = this.parseableDate(this.input.value, this.format)
-      if (isNaN(Date.parse(parseableDate))) {
+      if (this.typeable && isNaN(Date.parse(parseableDate))) {
         this.clearDate()
         this.input.value = null
         this.typedDate = null
